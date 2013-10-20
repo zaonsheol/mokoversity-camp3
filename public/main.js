@@ -5,7 +5,7 @@ var gameModule = (function (document, $) {
 
     "use strict";
 
-var timeoutVar,
+            var timeoutVar,
                 counter = 0,
                 ballX,
                 ballY,
@@ -50,26 +50,29 @@ var timeoutVar,
         ctx.arc(ballX, ballY, ballR, 0, Math.PI * 2 , true);
         ctx.fill();
 
-        if (counter >= 10) {
+        if (counter <= 10) {
                 gameOver();
         } else {
                 timeoutVar = setTimeout(startGame, 2000);
                 counter = counter + 1;
 
-                      // API: http://127.0.0.1:3000/scores?scores=500
-                      var api = "http://127.0.0.1:3000/scores?scores=" + scores;
-
-                      $.ajax({ url: api});
+ 
             } 
         }
 
         function gameOver() {
         console.log("Final: " + scores);
+
+                     // API: http://127.0.0.1:3000/scores?scores=500
+                      var api = "http://127.0.0.1:3000/scores?scores=" + scores;
+
+                      $.ajax({ url: api});       
+
         }
 
         return {
                 start: start
         }
-}) (document, $));
+} (document, $));
 
 gameModule.start();
