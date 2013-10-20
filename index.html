@@ -52,27 +52,23 @@
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
-<H1>Hello</H1>
 
+
+<style>
+#main {
+        width: 640px;
+        height: 480px;
+        background: url(./bg.jpg);
+}
+</style>
 <div class="row">
         <div class="col-md-12">
                         <div id="main"><canvas id="game"></canvas></div>
         </div>
 </div>
 
+<script type="text/javascript" src="main.js"></script>
 
-<script>
-var canvas = document.getElementById('game');
-var ctx = canvas.getContext('2d');
-
-canvas.width = 480;
-canvas.height = 320;
-
-ctx.fillStyle = 'black';
-ctx.beginPath();
-ctx.arc(100, 150, 50, 0, Math.PI * 2 , true);
-ctx.fill();
-</script>
 
 
 </body>
