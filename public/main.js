@@ -25,7 +25,14 @@ var gameModule = (function (document, $) {
                         scores = scores + (100 - ballR);
                         console.log("Hit ! Your scores: " + scores);
                 }
+
+                if (counter == 5) { 
+                gameOver();
+
+
         }
+
+    }
 
         function start() {
                 scores = 0;
@@ -50,15 +57,13 @@ var gameModule = (function (document, $) {
         ctx.arc(ballX, ballY, ballR, 0, Math.PI * 2 , true);
         ctx.fill();
 
-        if (counter <= 10) {
-                gameOver();
-        } else {
+        if (counter <= 5) {
+                
                 timeoutVar = setTimeout(startGame, 2000);
                 counter = counter + 1;
 
- 
-            } 
         }
+    }
 
         function gameOver() {
         console.log("Final: " + scores);
